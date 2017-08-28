@@ -15,3 +15,6 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.core.net 4 0 2017-08-28 14:38:31.588
 !MESSAGE WinHttp.GetProxyForUrl for pac failed with error '²»ÄÜÏÂÔشúÀí·þÎñÆ÷×Զ¯ÅäÖ' #12167.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2017-08-28 15:36:52.809
+!MESSAGE No repository found at http://activiti.org/designer/update/.
