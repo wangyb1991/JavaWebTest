@@ -4,4 +4,100 @@
   <artifactId>blogProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>blogproject</name>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+	</dependency>
+	<dependency>
+  		<groupId>com.mysql.jdbc</groupId>
+  		<artifactId>com.springsource.com.mysql.jdbc</artifactId>
+  		<version>5.1.6</version>
+	</dependency>
+	<dependency>
+    		<groupId>org.apache.commons</groupId>
+    		<artifactId>commons-dbcp2</artifactId>
+    		<version>2.1.1</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis</artifactId>
+	    <version>3.2.3</version>
+	</dependency>
+	<!-- activiti-engine -->  
+	<!-- <dependency>  
+	    <groupId>org.activiti</groupId>  
+	    <artifactId>activiti-engine</artifactId>  
+	    <version>5.18.0</version>  
+	</dependency>  
+	<dependency>  
+	    <groupId>org.activiti</groupId>  
+	    <artifactId>activiti-bpmn-model</artifactId>  
+	    <version>5.18.0</version>  
+	</dependency>  
+	<dependency>  
+	    <groupId>org.activiti</groupId>  
+	    <artifactId>activiti-bpmn-converter</artifactId>  
+	    <version>5.18.0</version>  
+	</dependency>  
+	<dependency>  
+	    <groupId>org.activiti</groupId>  
+	    <artifactId>activiti-process-validation</artifactId>  
+	    <version>5.18.0</version>  
+	</dependency>  
+	<dependency>  
+	    <groupId>org.activiti</groupId>  
+	    <artifactId>activiti-spring</artifactId>  
+	    <version>5.18.0</version>  
+	</dependency> -->
+  </dependencies>
+  <build>
+    <finalName>blogProject</finalName>
+    <plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<username>admin</username>
+					<password>admin</password>
+					<url>http://localhost:8080/manager/text</url>
+					<path>/servletTest</path>
+					<uriEncoding>UTF-8</uriEncoding>
+					<finalName>servletTest</finalName>
+					<server>tomcat</server>
+				</configuration>
+			</plugin>
+			<!-- <plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<url>http://localhost:8080/manager/text</url>
+					<path>/noodles</path>
+					<uriEncoding>UTF-8</uriEncoding>
+					<finalName>Restaurant</finalName>
+					<server>tomcat</server>
+				</configuration>
+			</plugin> -->
+		</plugins>
+	
+  </build>
 </project>
