@@ -56,7 +56,7 @@
 
       <div class="blog-header">
         <h1 class="blog-title">CALM DOWN</h1>
-        <p class="lead blog-description">share your blog</p>
+        <p class="lead blog-description text-danger">share your blog</p>
       </div>
       <hr/>
       <iframe name="indexFrame" style="border-style:none;width:100%" id="childFrame" scrolling="no" src="index.jsp"></iframe>
