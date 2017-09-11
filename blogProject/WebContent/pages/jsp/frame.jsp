@@ -54,11 +54,10 @@
 
     <div class="container">
 
-      <div class="blog-header">
+      <div style="padding:0 20px;" class="blog-header bg-success"><br/>
         <h1 class="blog-title">CALM DOWN</h1>
-        <p class="lead blog-description text-danger">share your blog</p>
+        <p class="lead blog-description">share your blog</p><hr/>
       </div>
-      <hr/>
       <iframe name="indexFrame" style="border-style:none;width:100%" id="childFrame" scrolling="no" src="index.jsp"></iframe>
     </div><!-- /.container -->
 
