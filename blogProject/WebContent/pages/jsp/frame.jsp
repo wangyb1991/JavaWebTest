@@ -23,14 +23,39 @@
     <link href="blog.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/plugins/musicplayer/css/style.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/resources/plugins/musicplayer/jquery-jplayer/jquery.jplayer.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/resources/plugins/musicplayer/ttw-music-player-min.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/resources/plugins/musicplayer/js/myplaylist.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var description = 'a';
+
+            $('#musicplayer').ttwMusicPlayer(myPlaylist, {
+                autoPlay:false, 
+                description:description,
+                jPlayer:{
+                    swfPath:'/blogProject/resources/plugins/musicplayer/jquery-jplayer' //You need to override the default swf path any time the directory structure changes
+                }
+            });
+            $(".nav.nav-tabs li,.nav.nav-tabs a").on("click",function(){
+    			$(".nav.nav-tabs li").removeClass("active");
+    			$(this).addClass("active");
+    		});
+            $("#wfButton").on("click",function(){
+            	$("#childFrame").prop("src","workflow.jsp");
+            });
+        });
+    </script>
   </head>
 
   <body>
@@ -49,17 +74,18 @@
 		      <li role="presentation"><a href="#">find</a></li>
 		    </ul>
 	    </li>
-	    <b><button style="float:right;margin-top:12px;" class="btn btn-sm btn-info" type="button">workflow</button></b>
+	    <b><button style="float:right;margin-top:12px;" class="btn btn-sm btn-info" type="button" id="wfButton">workflow</button></b>
 	</ul>
 
     <div class="container">
 
-      <div style="padding:0 20px;" class="blog-header bg-success"><br/>
-        <h1 class="blog-title">CALM DOWN</h1>
-        <p class="lead blog-description">share your blog</p><hr/>
-      </div>
+      <div style="padding:0 20px;width:100%;height:170px;" class="blog-header bg-primary"><br/>
+        <h1 class="blog-title" style="display:block;float:left;">CALM DOWN
+        <p class="lead blog-description" style="display:block;">share your spirit</p></h1>
+        <div id="musicplayer" style="width:370px;float:right;"></div>
+      </div><hr/>
       <iframe name="indexFrame" style="border-style:none;width:100%" id="childFrame" scrolling="no" src="index.jsp"></iframe>
-    </div><!-- /.container -->
+    </div><!-- /.container --><hr/>
 
     <footer class="blog-footer">
       <p class="col-md-12 col-md-offset-1">Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
@@ -72,16 +98,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script type="text/javascript">
-    	$(".nav.nav-tabs li,.nav.nav-tabs a").on("click",function(){
-    		$(".nav.nav-tabs li").removeClass("active");
-    		$(this).addClass("active");
-    	});
-    </script>
   </body>
 </html>

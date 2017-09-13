@@ -39,7 +39,7 @@ public class ProcessManager {
 		//数据库配置
 		pec.setJdbcDriver("com.mysql.jdbc.Driver");
 		//?useUnicode=true&characterEncoding=utf8&useSSL=true失效(不明确原因)
-		pec.setJdbcUrl("jdbc:mysql://localhost:3306/activiti?serverTimezone=UTC");
+		pec.setJdbcUrl("jdbc:mysql://localhost:3306/activiti??useUnicode=true&characterEncoding=utf8&useSSL=true");
 		pec.setJdbcUsername("root");
 		pec.setJdbcPassword("123456");
 		//自动建表

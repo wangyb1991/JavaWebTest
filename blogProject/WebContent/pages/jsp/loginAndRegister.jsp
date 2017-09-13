@@ -17,33 +17,43 @@
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="blog.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/resources/plugins/ace/js/bootbox.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/pages/jsp/loginAndRegister.js"></script>
+    <script> 
+		function IFrameResize(){ 
+		//alert(this.document.body.scrollHeight); //弹出当前页面的高度 
+		var obj = parent.document.getElementById("childFrame"); //取得父页面IFrame对象 
+		//alert(obj.height); //弹出父页面中IFrame中设置的高度 
+		obj.height = this.document.body.scrollHeight+50; //调整父页面中IFrame的高度为此页面的高度 
+		} 
+	</script>
   </head>
-	<body>
+	<body onload="IFrameResize()">
 		<!-- <iframe style="float:right;" src="abc.jsp"></iframe> -->
 		<div style="width:500px;float:left;">
-		<form class="form-horizontal"><br/><br/>
+		<form class="form-horizontal" id="loginForm" method="GET" action="myBlog.jsp"><br/><br/>
 		<div class="form-group">
 			<div class="col-sm-6">
-		      <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+		      <input type="text" name="userName" class="form-control" id="inputEmail" placeholder="Email">
 		    </div>
 	    </div>
 	  <div class="form-group">
 	    <div class="col-sm-6">
-	      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+	      <input type="password" name="userPW" class="form-control" id="inputPassword" placeholder="Password">
 	    </div>
 	   </div>
 		  <div class="form-group">
@@ -57,11 +67,11 @@
 		  </div>
 		  <div class="form-group">
 		    <div class="col-sm-6">
-		      <button type="submit" class="btn btn-info">Sign in</button>
+		      <button type="submit" id="loginSubmit" class="btn btn-info">Sign in</button>
 		    </div>
 		  </div>
 		</form>
 		</div>
-		
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</body>
 </html>
